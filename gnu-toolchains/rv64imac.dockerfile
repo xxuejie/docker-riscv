@@ -7,7 +7,7 @@ RUN git clone https://github.com/riscv/riscv-gnu-toolchain /root/source && cd /r
 
 RUN mkdir -p /root/riscv
 
-RUN ./configure --prefix=/root/riscv --with-arch=rv64imac && make
+RUN cd /root/source && ./configure --prefix=/root/riscv --with-arch=rv64imac && make
 
 FROM buildpack-deps:bionic
 MAINTAINER Xuejie Xiao <xxuejie@gmail.com>
