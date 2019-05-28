@@ -7,6 +7,7 @@ RUN git clone https://github.com/riscv/riscv-gnu-toolchain /root/source && cd /r
 
 RUN mkdir -p /root/riscv
 
+RUN cd /root/source && git rev-parse HEAD > /root/riscv/REVISION
 RUN cd /root/source && ./configure --prefix=/root/riscv --with-arch=rv64imac && make
 
 FROM buildpack-deps:bionic
