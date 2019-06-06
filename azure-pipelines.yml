@@ -1,0 +1,6 @@
+jobs:
+  - job: xenial
+    pool:
+      vmImage: 'ubuntu-16.04'
+    steps:
+      - script: docker build -t xxuejie/riscv-gnu-toolchain-rv64imac:xenial -f gnu-toolchains/rv64imac_xenial.dockerfile .
